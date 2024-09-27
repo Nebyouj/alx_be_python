@@ -1,7 +1,6 @@
 
 def perform_operation(num1, num2, operation):
-    if num2 == 0:
-        return ZeroDivisionError
+    
     
     match operation:
         case "add":
@@ -11,7 +10,9 @@ def perform_operation(num1, num2, operation):
         case "multiply":
             return num1 * num2
         case "divide":
-            return num1 / num2 if num2 != 0 else print("Error! Division by zero")
+            if num2 != 0: pass
+            elif num2 == 0: return ZeroDivisionError
+            return num1 / num2 
         case "==":
             return True if num1 == num2 else False
         case _:
