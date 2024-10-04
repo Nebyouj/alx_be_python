@@ -7,6 +7,20 @@ class Book:
     def display(self):
         print(f"{self.title} by {self.author}")
 
+    def check_out(self):
+        if not self._is_checked_out:
+            self._is_checked_out = True
+            print(f"{self.title} has been checked out.")
+        else:
+            print(f"{self.title} is already checked out.")
+
+    def return_book(self):
+        if self._is_checked_out:
+            self._is_checked_out = False
+            print(f"{self.title} has been returned.")
+        else:
+            print(f"{self.title} was not checked out.")
+
 class Library:
     def __init__(self):
         self._books = []
